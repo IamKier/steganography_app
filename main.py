@@ -10,22 +10,13 @@ class SteganographyApp(tk.Tk):
         self.title("Steganography App")
         self.geometry("800x600")  # Set initial window size
 
-        # Set background color
-        self.configure(background='#347F14')
-
-        # Create a style object
-        style = ttk.Style()
-
-        # Configure a custom style for TLabel (ttk.Label)
-        style.configure("Custom.TLabel", background="white")
-
-        self.container = ttk.Frame(self, style="Custom.TLabel", background='#347F14')  # Set container background color and style
+        self.container = ttk.Frame(self)
         self.container.pack(fill=tk.BOTH, expand=True)
 
         self.init_main_page()
 
     def init_main_page(self):
-        ttk.Label(self.container, text="Steganography App", font=("Arial", 24, "bold"), style="Custom.TLabel").pack(pady=20)
+        ttk.Label(self.container, text="Steganography App", font=("Arial", 24, "bold")).pack(pady=20)
 
         ttk.Button(self.container, text="Encrypt Image", command=self.show_encrypting_module).pack(pady=10)
         ttk.Button(self.container, text="Decrypt Image", command=self.show_decrypting_module).pack(pady=10)
